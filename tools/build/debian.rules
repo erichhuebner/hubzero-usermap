@@ -1,0 +1,125 @@
+#!/usr/bin/make -f
+#
+# @package      hubzero-usermap
+# @file         rules
+# @author       Nicholas J. Kisseberth <nkissebe@purdue.edu>
+# @copyright    Copyright (c) 2010-2015 HUBzero Foundation, LLC.
+# @license      http://opensource.org/licenses/MIT MIT
+#
+# Copyright (c) 2010-2015 HUBzero Foundation, LLC.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+#
+# HUBzero is a registered trademark of HUBzero Foundation, LLC.
+#
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+$(info ########## Goals: $(MAKECMDGOALS) ##########)
+
+CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
+CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
+CXXFLAGS:=$(shell dpkg-buildflags --get CXXFLAGS)
+LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
+
+export CFLAGS
+export CPPFLAGS
+export CXXFLAGS
+export LDFLAGS
+
+DEB_MAJOR:=$(shell lsb_release -r -s | cut -d . -f 1)
+
+configure:
+	@echo "########## configure ##########"
+	dh_testdir
+	>$@
+
+build: configure
+	@echo "########## build ##########"
+	dh_testdir
+	$(MAKE) --makefile=/usr/src/packages/SOURCES/Makefile
+	>$@
+
+clean:
+	@echo "########## clean ##########"
+	dh_testdir
+	dh_testroot
+	rm -fr build configure
+	$(MAKE) --makefile=/usr/src/packages/SOURCES/Makefile clean
+	dh_clean
+
+install: build
+	@echo "########## install ##########"
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	$(MAKE) --makefile=/usr/src/packages/SOURCES/Makefile DESTDIR=$(CURDIR)/debian/hubzero-usermap install
+
+binary-indep: install
+	@echo "########## binary-indep ##########"
+	dh_testdir -i
+	dh_testroot -i
+	dh_installchangelogs -i
+	dh_installdocs -i
+	dh_installexamples -i
+	dh_install -i
+	dh_installlogrotate -i
+	dh_installinit -i
+	dh_installman -i
+	#dh_python2 -i
+	dh_link -i
+	dh_strip -i
+	dh_lintian -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_shlibdeps -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+binary-arch: install
+	@echo "########## binary-arch ##########"
+	dh_testdir -a
+	dh_testroot -a
+	dh_installchangelogs -a
+	dh_installdocs -a
+	dh_installexamples -a
+	dh_install -a
+	dh_installlogrotate -a
+	dh_installinit -a
+	dh_installman -a
+	dh_link -a
+	dh_strip -a
+	dh_lintian -a
+	dh_compress -a
+	dh_fixperms -a
+	dh_installdeb -a
+	dh_shlibdeps -a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
+
+#binary: binary-indep 
+binary: binary-arch
+	@echo "########## binary ##########"
+
+.PHONY: clean binary-indep binary-arch binary install

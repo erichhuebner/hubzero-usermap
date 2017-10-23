@@ -1,0 +1,14 @@
+Source: hubzero-usermap
+Section: misc
+Priority: optional
+Maintainer: Nicholas J. Kisseberth <nkissebe@purdue.edu>
+Build-Depends: debhelper (>= 8.0.0), libfuse-dev
+Standards-Version: 3.8.4
+Homepage: http://hubzero.org
+
+Package: hubzero-usermap
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: HUBzero usermapping FUSE-based filesystem
+ FUSE-based filesystem which maps properly authenticated user to 
+ proper system credentials so they may access their files.

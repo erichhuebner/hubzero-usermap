@@ -1,0 +1,102 @@
+hubzero-usermap (2.1.0-1) unstable; urgency=low
+
+  * add no-op support of -s mount option for jessie
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Fri, 10 Feb 2017 09:49:05 -0500
+
+hubzero-usermap (2.0.0-1) unstable; urgency=low
+
+  * update copyright, license, version
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Tue, 08 Sep 2015 10:12:32 -0400
+
+hubzero-usermap (1.3.0-1) unstable; urgency=low
+
+  * update version for diego repository 
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Mon, 31 Aug 2015 09:30:17 -0400
+
+hubzero-usermap (1.2.0-1) unstable; urgency=low
+
+  * Repackaged to support multiple Debian releases
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Mon, 08 Sep 2014 08:44:15 -0400
+
+hubzero-usermap (1.1.4-1) unstable; urgency=low
+
+  * Update copyright statements
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Sat, 17 Aug 2013 19:44:19 -0400
+
+hubzero-usermap (1.1.3-1) unstable; urgency=low
+
+  * Accept (but doesn't use) the -n parameter (for wheezy)
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Tue, 18 Jun 2013 09:19:40 -0400
+
+hubzero-usermap (1.1.2-1) unstable; urgency=low
+
+  * remove modprobe from postinst 
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Mon, 22 Oct 2012 15:13:27 -0400
+
+hubzero-usermap (1.1.1-1) unstable; urgency=low
+
+  * update copyrights for HUBzero Foundation, LLC. and Debian 6 packaging
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Thu, 30 Aug 2012 11:58:30 -0400
+
+hubzero-usermap (1.1.0-1) unstable; urgency=low
+
+  * fix lintian packaging errors
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Thu, 22 Mar 2012 16:55:15 -0400
+
+hubzero-usermap (1.0.1-1) unstable; urgency=low
+
+  * Clean up debian packaging a little
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Wed, 07 Dec 2011 18:50:58 -0500
+
+hubzero-usermap (1.0.0-1) testing; urgency=low
+
+  * Updated to 1.0
+
+ -- John Rosheck <jrosheck@purdue.edu>  Fri, 08 Apr 2011 00:31:02 -0400
+
+hubzero-usermap (0.9.1-1) testing; urgency=low
+
+  * Now has latest code.
+
+ -- John Rosheck <jrosheck@purdue.edu>  Tue, 22 Mar 2011 13:04:27 -0400
+
+hubzero-usermap (0.9.0-1) testing; urgency=low
+
+  * Updated copyright notice, cleaned out extraneous debian example files
+
+ -- John Rosheck <jrosheck@purdue.edu>  Thu, 03 Mar 2011 23:09:55 -0500
+
+hubzero-usermap (0.8.1-1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Advanced version to avoid conflict in the repository
+
+ -- John Rosheck <jrosheck@purdue.edu>  Thu, 23 Sep 2010 15:19:25 -0400
+
+hubzero-usermap (0.8.0-3) stable; urgency=low
+
+  * add 'modprobe fuse' to postinst 
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Sun, 04 Apr 2010 16:57:21 -0400
+
+hubzero-usermap (0.8.0-2) stable; urgency=low
+
+  * update copyright and control files 
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Wed, 31 Mar 2010 15:30:20 -0400
+
+hubzero-usermap (0.8.0-1) stable; urgency=low
+
+  * Initial release.
+
+ -- Nicholas J. Kisseberth <nkissebe@purdue.edu>  Wed, 31 Mar 2010 15:13:19 -0400
