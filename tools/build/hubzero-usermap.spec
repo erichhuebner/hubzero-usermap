@@ -29,7 +29,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 /sbin/
 
-%doc docs/copyright
+%doc $RPM_SOURCE_DIR/copyright
 
 %changelog
 * Fri Sep 4 2015 David Benham <dbenham@purdue.edu>
