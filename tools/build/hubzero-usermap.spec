@@ -20,7 +20,7 @@ Source0:    %{name}-%{version}.tar.gz
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make --makefile=/home/abuild/rpmbuild/SOURCES/Makefile install DESTDIR=$RPM_BUILD_ROOT
+make --makefile=$RPM_SOURCE_DIR/Makefile install DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -29,7 +29,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 /sbin/
 
-%doc /home/abuild/rpmbuild/SOURCES/copyright
+%doc docs/copyright
 
 %changelog
 * Fri Sep 4 2015 David Benham <dbenham@purdue.edu>
